@@ -53,7 +53,7 @@ public class TrackPathUtils {
       pathPoints.addAll(points);
       lastPolyline.setPoints(pathPoints);
     } else {
-      PolylineOptions polylineOptions = new PolylineOptions().addAll(points).width(5).color(color);
+      PolylineOptions polylineOptions = new PolylineOptions().addAll(points).width(10).color(color);
       Polyline polyline = googleMap.addPolyline(polylineOptions);
       paths.add(polyline);
     }
