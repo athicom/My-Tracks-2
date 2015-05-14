@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+  android:title="@string/settings_language" >
+  <EditTextPreference
+    android:name="EditText Preference"
+    android:defaultValue=""
+    android:key="@string/language_default_key"
+    android:summary="Please enter you languase code"
+    android:title="@string/settings_advanced_language_default_title" />
+</PreferenceScreen>
