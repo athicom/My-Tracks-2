@@ -181,13 +181,21 @@ public class MarkerListActivity extends AbstractMyTracksActivity implements Dele
 
         boolean statistics = WaypointType.values()[cursor.getInt(typeIndex)]
             == WaypointType.STATISTICS;
+        
         int iconId = statistics ? R.drawable.ic_marker_yellow_pushpin
             : R.drawable.ic_marker_blue_pushpin;
+        
         String name = cursor.getString(nameIndex);
         long time = cursor.getLong(timeIndex);
         String category = statistics ? null : cursor.getString(categoryIndex);
         String description = statistics ? null : cursor.getString(descriptionIndex);
         String photoUrl = cursor.getString(photoUrlIndex);
+        
+        // Remark by ViTy 14-5-2015 , check marker is photo?
+        if (photoUrl.length() != 0) {
+          iconId = R.drawable.ic_marker_photo_pushpin;
+        }
+        //Toast.makeText(context, Integer.toString(photoUrl.length()), Toast.LENGTH_LONG).show();
 
         ListItemUtils.setListItem(MarkerListActivity.this, view, false, true, iconId,
             R.string.image_marker, name, null, null, null, 0, time, false, category, description,
