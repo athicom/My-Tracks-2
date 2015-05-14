@@ -1,4 +1,4 @@
-My-Tracks-2
+<b>My-Tracks-2</b>
 
 Clone from My Tracks for Android 2.0.6
 
