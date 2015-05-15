@@ -3,7 +3,7 @@
 	<name>MyTracks2</name>
 	<comment></comment>
 	<projects>
-		<project>MyTracks</project>
+		<project>MyTracks2</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

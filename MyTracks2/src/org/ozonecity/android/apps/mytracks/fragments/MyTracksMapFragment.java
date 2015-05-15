@@ -58,12 +58,12 @@ import org.ozonecity.android.apps.mytracks.MapOverlay;
 import org.ozonecity.android.apps.mytracks.MarkerDetailActivity;
 import org.ozonecity.android.apps.mytracks.TrackDetailActivity;
 import org.ozonecity.android.apps.mytracks.content.MyTracksProviderUtils;
+import org.ozonecity.android.apps.mytracks.content.MyTracksProviderUtils.Factory;
 import org.ozonecity.android.apps.mytracks.content.Track;
 import org.ozonecity.android.apps.mytracks.content.TrackDataHub;
 import org.ozonecity.android.apps.mytracks.content.TrackDataListener;
 import org.ozonecity.android.apps.mytracks.content.TrackDataType;
 import org.ozonecity.android.apps.mytracks.content.Waypoint;
-import org.ozonecity.android.apps.mytracks.content.MyTracksProviderUtils.Factory;
 import org.ozonecity.android.apps.mytracks.services.MyTracksLocationManager;
 import org.ozonecity.android.apps.mytracks.stats.TripStatistics;
 import org.ozonecity.android.apps.mytracks.util.ApiAdapterFactory;
@@ -90,9 +90,9 @@ public class MyTracksMapFragment extends SupportMapFragment implements TrackData
 
   private static final float DEFAULT_ZOOM_LEVEL = 18f;
 
-  // Google's latitude and longitude
-  private static final double DEFAULT_LATITUDE = 37.423;
-  private static final double DEFAULT_LONGITUDE = -122.084;
+  // Google's latitude and longitude ( Namseng Insurance Thailand.)
+  private static final double DEFAULT_LATITUDE = 13.818180;
+  private static final double DEFAULT_LONGITUDE = 100.531725;
 
   private static final int MAP_VIEW_PADDING = 32;
 
