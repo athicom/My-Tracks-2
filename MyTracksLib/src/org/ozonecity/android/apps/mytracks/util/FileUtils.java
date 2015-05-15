@@ -39,7 +39,7 @@ public class FileUtils {
   /**
    * The My Tracks external storage directory.
    */
-  static final String SDCARD_TOP_DIR = "MyTracks";
+  static final String SDCARD_TOP_DIR = "MyTracks2";
 
   /**
    * The maximum FAT32 path length. See the FAT32 spec at
@@ -106,7 +106,7 @@ public class FileUtils {
   }
 
   public static File getPhotoDir(long trackId) {
-    return new File(getPath(PICTURES_DIR, "MyTracks" + Long.toString(trackId)));
+    return new File(getPath(PICTURES_DIR, "MyTracks2-" + Long.toString(trackId)));
   }
 
   /**
