@@ -256,6 +256,7 @@ public class MapOverlay {
         CachedLocation cachedLocation = locations.get(i);
         if (cachedLocation.valid) {
           MarkerOptions markerOptions = new MarkerOptions().position(cachedLocation.getLatLng())
+              .title("STOP")
               .anchor(MARKER_X_ANCHOR, MARKER_Y_ANCHOR).draggable(false).visible(true)
               .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker_red_paddle));
           googleMap.addMarker(markerOptions);
@@ -270,6 +271,7 @@ public class MapOverlay {
       CachedLocation cachedLocation = locations.get(i);
       if (cachedLocation.valid) {
         MarkerOptions markerOptions = new MarkerOptions().position(cachedLocation.getLatLng())
+            .title("START")
             .anchor(MARKER_X_ANCHOR, MARKER_Y_ANCHOR).draggable(false).visible(true)
             .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker_green_paddle));
         googleMap.addMarker(markerOptions);
@@ -295,8 +297,8 @@ public class MapOverlay {
         MarkerOptions markerOptions = new MarkerOptions().position(latLng)
             .anchor(WAYPOINT_X_ANCHOR, WAYPOINT_Y_ANCHOR).draggable(false).visible(true)
             .icon(BitmapDescriptorFactory.fromResource(drawableId))
-            .title(String.valueOf(waypoint.getId()));
-        googleMap.addMarker(markerOptions);
+            .title("MARKER "+String.valueOf(waypoint.getId()));
+        googleMap.addMarker(markerOptions.snippet("Lat:"+String.valueOf(latLng.latitude)+", Lng:"+String.valueOf(latLng.longitude)));
       }
     }
   }

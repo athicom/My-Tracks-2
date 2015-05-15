@@ -21,7 +21,7 @@ import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnCameraChangeListener;
-import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
+import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
 import com.google.android.gms.maps.LocationSource;
 import com.google.android.gms.maps.LocationSource.OnLocationChangedListener;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -90,9 +90,8 @@ public class MyTracksMapFragment extends SupportMapFragment implements TrackData
 
   private static final float DEFAULT_ZOOM_LEVEL = 18f;
 
-  // Google's latitude and longitude ( Namseng Insurance Thailand.)
-  private static final double DEFAULT_LATITUDE = 13.818180;
-  private static final double DEFAULT_LONGITUDE = 100.531725;
+  private static final double DEFAULT_LATITUDE = 37.423;
+  private static final double DEFAULT_LONGITUDE = -122.084;
 
   private static final int MAP_VIEW_PADDING = 32;
 
@@ -242,6 +241,9 @@ public class MyTracksMapFragment extends SupportMapFragment implements TrackData
        */
       googleMap.getUiSettings().setMyLocationButtonEnabled(false);
       googleMap.setIndoorEnabled(true);
+      
+      /* Remark by ViTy 15-5-2015 , change Listener from MarkerClick to InfoWindowsClick */
+      /*
       googleMap.setOnMarkerClickListener(new OnMarkerClickListener() {
 
           @Override
@@ -259,6 +261,26 @@ public class MyTracksMapFragment extends SupportMapFragment implements TrackData
           return true;
         }
       });
+      */
+      googleMap.setOnInfoWindowClickListener(new OnInfoWindowClickListener() {
+        
+        @Override
+        public void onInfoWindowClick(Marker marker) {
+          if (isResumed()) {
+            String title = marker.getTitle();
+            //if (title != null && title.length() > 0) {
+            if (title != null && title.length() > 6) {
+              //long id = Long.valueOf(title);
+              long id = Long.valueOf(title.substring(7));
+              Context context = getActivity();
+              Intent intent = IntentUtils.newIntent(context, MarkerDetailActivity.class)
+                  .putExtra(MarkerDetailActivity.EXTRA_MARKER_ID, id);
+              context.startActivity(intent);
+            }
+          }
+        }
+      });
+
       googleMap.setLocationSource(new LocationSource() {
 
           @Override
