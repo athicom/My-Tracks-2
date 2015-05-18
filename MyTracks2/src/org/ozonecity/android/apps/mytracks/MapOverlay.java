@@ -52,11 +52,11 @@ import org.ozonecity.android.maps.mytracks.R;
  */
 public class MapOverlay {
 
-  public static final float WAYPOINT_X_ANCHOR = 13f / 48f;
-
   private static final String TAG = MapOverlay.class.getSimpleName();
   
-  private static final float WAYPOINT_Y_ANCHOR = 43f / 48f;
+  public static float WAYPOINT_X_ANCHOR = 13f / 48f;
+  private static float WAYPOINT_Y_ANCHOR = 43f / 48f;
+  
   private static final float MARKER_X_ANCHOR = 50f / 96f;
   private static final float MARKER_Y_ANCHOR = 90f / 96f;
   private static final int INITIAL_LOCATIONS_SIZE = 1024;
@@ -294,11 +294,24 @@ public class MapOverlay {
         LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
         int drawableId = waypoint.getType() == WaypointType.STATISTICS 
             ? R.drawable.ic_marker_yellow_pushpin : R.drawable.ic_marker_blue_pushpin;
+
+        // Remark by ViTy 18-5-2015 , check marker is photo?
+        if (!waypoint.getPhotoUrl().isEmpty()) {
+          drawableId = R.drawable.ic_marker_photo_pushpin;
+          WAYPOINT_X_ANCHOR = 0.5f;
+          WAYPOINT_Y_ANCHOR = 0.9f;
+        } else {
+          WAYPOINT_X_ANCHOR = 13f / 48f;
+          WAYPOINT_Y_ANCHOR = 43f / 48f;
+        }
+        //Toast.makeText(context, waypoint.getPhotoUrl(), Toast.LENGTH_LONG).show();
+        
         MarkerOptions markerOptions = new MarkerOptions().position(latLng)
             .anchor(WAYPOINT_X_ANCHOR, WAYPOINT_Y_ANCHOR).draggable(false).visible(true)
             .icon(BitmapDescriptorFactory.fromResource(drawableId))
-            .title("MARKER "+String.valueOf(waypoint.getId()));
-        googleMap.addMarker(markerOptions.snippet("Lat:"+String.valueOf(latLng.latitude)+", Lng:"+String.valueOf(latLng.longitude)));
+            .title(String.valueOf(waypoint.getName()))
+            .snippet("Id="+String.valueOf(waypoint.getId()));
+        googleMap.addMarker(markerOptions);
       }
     }
   }

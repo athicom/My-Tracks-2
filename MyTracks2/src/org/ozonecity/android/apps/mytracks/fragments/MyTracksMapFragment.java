@@ -267,11 +267,14 @@ public class MyTracksMapFragment extends SupportMapFragment implements TrackData
         @Override
         public void onInfoWindowClick(Marker marker) {
           if (isResumed()) {
-            String title = marker.getTitle();
+            //String title = marker.getTitle();
+            String snippet = marker.getSnippet();
             //if (title != null && title.length() > 0) {
-            if (title != null && title.length() > 6) {
+            //if (title != null && title.length() > 6) {
+            if (snippet != null && snippet.length() > 0) {
               //long id = Long.valueOf(title);
-              long id = Long.valueOf(title.substring(7));
+              //long id = Long.valueOf(title.substring(7));
+              long id = Long.valueOf(snippet.substring(3));
               Context context = getActivity();
               Intent intent = IntentUtils.newIntent(context, MarkerDetailActivity.class)
                   .putExtra(MarkerDetailActivity.EXTRA_MARKER_ID, id);

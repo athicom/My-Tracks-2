@@ -115,9 +115,9 @@ public class PreferencesUtils {
   
   // Track color
   public static final String TRACK_COLOR_MODE_DEFAULT = "SINGLE";
-  public static final int TRACK_COLOR_MODE_MEDIUM_DEFAULT = 15;
+  public static final int TRACK_COLOR_MODE_MEDIUM_DEFAULT = 40;
   public static final int TRACK_COLOR_MODE_PERCENTAGE_DEFAULT = 25;
-  public static final int TRACK_COLOR_MODE_SLOW_DEFAULT = 9;
+  public static final int TRACK_COLOR_MODE_SLOW_DEFAULT = 20;
   
   public static final String TRACK_NAME_DEFAULT = "LOCATION";
   
