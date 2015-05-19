@@ -447,7 +447,7 @@ public class TrackWidgetProvider extends AppWidgetProvider {
         context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
     remoteViews.setOnClickPendingIntent(R.id.track_widget_record_button, pendingIntent);
   }
-
+  
   /**
    * Updates the stop button.
    * 

@@ -924,6 +924,10 @@ limitations under the License.
     translation_description="The accessibility description for the record button.">
     Record
   </string>
+  <string name="image_point_record"
+    translation_description="The accessibility description for the point record button.">
+    Record
+  </string>  
   <string name="image_stop"
     translation_description="The accessibility description for the stop button.">
     Stop
