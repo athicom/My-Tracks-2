@@ -97,6 +97,7 @@ public class ChartView extends View {
   private final Drawable pointer;
   private final Drawable statisticsMarker;
   private final Drawable waypointMarker;
+  private final Drawable waypointMarkerPhoto;
   private final int markerWidth;
   private final int markerHeight;
 
@@ -211,7 +212,10 @@ public class ChartView extends View {
 
     waypointMarker = getResources().getDrawable(R.drawable.ic_marker_blue_pushpin);
     waypointMarker.setBounds(0, 0, markerWidth, markerHeight);
-
+    
+    waypointMarkerPhoto = getResources().getDrawable(R.drawable.ic_marker_photo_pushpin);
+    waypointMarkerPhoto.setBounds(0, 0, markerWidth, markerHeight);
+    
     scroller = new Scroller(context);
     setFocusable(true);
     setClickable(true);
@@ -575,7 +579,12 @@ public class ChartView extends View {
         if (waypoints.get(i).getType() == WaypointType.STATISTICS) {
           statisticsMarker.draw(canvas);
         } else {
-          waypointMarker.draw(canvas);
+          // Remark by ViTy 20-5-2015 , check marker is photo?
+          if (!waypoint.getPhotoUrl().isEmpty()) {
+            waypointMarkerPhoto.draw(canvas);
+          } else {
+            waypointMarker.draw(canvas); 
+          }
         }
         canvas.restore();
       }
