@@ -3041,6 +3041,8 @@ limitations under the License.
       completion suggestion for a waypoint.">
     waypoint
   </string>
-  <string name="settings_language">Language (Test, no effect.)</string>
-  <string name="settings_advanced_language_default_title">Default Language</string>
+  <string name="settings_other">Other</string>
+  <string name="settings_language_default_title">Default Language</string>
+  <string name="settings_autotimestop_default_title">Auto time stop</string>  
+  <string name="settings_link_default_title">Link</string>  
 </resources>

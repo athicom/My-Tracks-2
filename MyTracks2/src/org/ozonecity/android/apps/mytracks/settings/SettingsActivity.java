@@ -106,7 +106,7 @@ public class SettingsActivity extends AbstractSettingsActivity implements CheckP
     configPreference(R.string.settings_recording_key, RecordingSettingsActivity.class);
     configPreference(R.string.settings_sensor_key, SensorSettingsActivity.class);
     configPreference(R.string.settings_advanced_key, AdvancedSettingsActivity.class);
-    configPreference(R.string.settings_language_key, LanguageSettingsActivity.class);
+    configPreference(R.string.settings_other_key, OtherSettingsActivity.class);
   }
 
   @Deprecated

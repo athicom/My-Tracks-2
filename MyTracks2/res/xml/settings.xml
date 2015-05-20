@@ -45,7 +45,7 @@ limitations under the License.
     android:persistent="false"
     android:title="@string/settings_advanced" />
   <Preference
-    android:key="@string/settings_language_key"
+    android:key="@string/settings_other_key"
     android:persistent="false"
-    android:title="@string/settings_language" />
+    android:title="@string/settings_other" />
 </PreferenceScreen>

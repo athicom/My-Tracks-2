@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+  android:title="@string/settings_other" >
+  <org.ozonecity.android.apps.mytracks.settings.MyTracksEditTextPreference
+    android:key="@string/other_language_default_key"
+    android:summary="Please enter your languase code\n(Test preference only, no effect)."
+    android:title="@string/settings_language_default_title" />
+  <org.ozonecity.android.apps.mytracks.settings.MyTracksEditTextPreference
+    android:inputType="number"
+    android:defaultValue="0"
+    android:key="@string/other_autotimestop_default_key"
+    android:summary="Please enter your time\n(0 sec is disable)."
+    android:title="@string/settings_autotimestop_default_title" />  
+  <org.ozonecity.android.apps.mytracks.settings.MyTracksEditTextPreference
+    android:key="@string/other_link_default_key"
+    android:defaultValue=""
+    android:summary="Please enter your link\n(Blank is disable)."
+    android:title="@string/settings_link_default_title" />    
+</PreferenceScreen>

@@ -29,10 +29,12 @@ limitations under the License.
   <string name="export_google_fusion_tables_public_key">exportGoogleFusionTablesPublic</string>
   <string name="export_google_maps_public_key">exportGoogleMapsPublic</string>
   <string name="export_type_key">exportType</string>
-  <string name="language_default_key">LanguageDefault</string>  
   <string name="map_type_key">mapType</string>
   <string name="max_recording_distance_key">maxRecordingDistance</string>
   <string name="min_recording_interval_key">minRecordingInterval</string>
+  <string name="other_language_default_key">languageDefault</string>
+  <string name="other_autotimestop_default_key">autoTimeStopDefault</string>  
+  <string name="other_link_default_key">linkDefault</string>    
   <string name="photo_size_key">photoSize</string>
   <string name="recording_distance_interval_key">recordingDistanceInterval</string>
   <string name="recording_gps_accuracy_key">recordingGpsAccuracy</string>
@@ -74,7 +76,7 @@ limitations under the License.
   <!-- Keys for non-persisted preferences. Sorted alphabetically. DO NOT TRANSLATE. -->
   <string name="settings_advanced_key">settingsAdvanced</string>
   <string name="settings_chart_key">settingsChart</string>
-  <string name="settings_language_key">settingsLanguage</string>  
+  <string name="settings_other_key">settingsOther</string>  
   <string name="settings_map_key">settingsMap</string>
   <string name="settings_map_medium_display_key">settingsMapMediumDisplay</string>
   <string name="settings_map_percentage_display_key">settingsMapPercentageDisplay</string>
