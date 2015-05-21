@@ -242,7 +242,7 @@ public class MyTracksMapFragment extends SupportMapFragment implements TrackData
       googleMap.getUiSettings().setMyLocationButtonEnabled(false);
       googleMap.setIndoorEnabled(true);
       
-      /* Remark by ViTy 15-5-2015 , change Listener from MarkerClick to InfoWindowsClick */
+      /* ViTy 15-5-2015 , change Listener from MarkerClick to InfoWindowsClick */
       /*
       googleMap.setOnMarkerClickListener(new OnMarkerClickListener() {
 

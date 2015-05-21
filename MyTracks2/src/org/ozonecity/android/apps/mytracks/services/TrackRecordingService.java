@@ -31,6 +31,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.database.sqlite.SQLiteException;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
@@ -86,7 +88,7 @@ import org.ozonecity.android.maps.mytracks.R;
  * @author Leif Hendrik Wilden
  */
 public class TrackRecordingService extends Service {
-
+  
   /**
    * The name of extra intent property to indicate whether we want to resume a
    * previously recorded track.
@@ -532,10 +534,19 @@ public class TrackRecordingService extends Service {
    */
   @VisibleForTesting
   protected void startForegroundService(PendingIntent pendingIntent, int messageId) {
-    NotificationCompat.Builder builder = new NotificationCompat.Builder(this).setContentIntent(
-        pendingIntent).setContentText(getString(messageId))
-        .setContentTitle(getString(R.string.my_tracks_app_name)).setOngoing(true)
-        .setSmallIcon(R.drawable.ic_stat_notify_recording).setWhen(System.currentTimeMillis());
+
+    // ViTy 21-5-2015 Add setTicker and setLargeIcon in Notification.
+    Bitmap icon = BitmapFactory.decodeResource(getResources(),
+        R.drawable.ic_launcher_my_tracks);
+    NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
+        .setContentIntent(pendingIntent)
+        .setTicker(getString(messageId))
+        .setContentTitle(getString(R.string.my_tracks_app_name))
+        .setContentText(getString(messageId))        
+        .setOngoing(true)
+        .setSmallIcon(R.drawable.ic_stat_notify_recording)
+        .setLargeIcon(Bitmap.createScaledBitmap(icon, 128, 128, false))
+        .setWhen(System.currentTimeMillis());
     startForeground(1, builder.build());
   }
 

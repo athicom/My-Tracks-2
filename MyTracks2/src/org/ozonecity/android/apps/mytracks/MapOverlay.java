@@ -295,7 +295,7 @@ public class MapOverlay {
         int drawableId = waypoint.getType() == WaypointType.STATISTICS 
             ? R.drawable.ic_marker_yellow_pushpin : R.drawable.ic_marker_blue_pushpin;
 
-        // Remark by ViTy 18-5-2015 , check marker is photo?
+        // ViTy 18-5-2015 , check marker is photo?
         if (!waypoint.getPhotoUrl().isEmpty()) {
           drawableId = R.drawable.ic_marker_photo_pushpin;
           WAYPOINT_X_ANCHOR = 0.5f;

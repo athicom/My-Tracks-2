@@ -191,7 +191,7 @@ public class MarkerListActivity extends AbstractMyTracksActivity implements Dele
         String description = statistics ? null : cursor.getString(descriptionIndex);
         String photoUrl = cursor.getString(photoUrlIndex);
         
-        // Remark by ViTy 14-5-2015 , check marker is photo?
+        // ViTy 14-5-2015 , check marker is photo?
         if (photoUrl.length() != 0) {
           iconId = R.drawable.ic_marker_photo_pushpin;
         }

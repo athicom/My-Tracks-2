@@ -579,7 +579,7 @@ public class ChartView extends View {
         if (waypoints.get(i).getType() == WaypointType.STATISTICS) {
           statisticsMarker.draw(canvas);
         } else {
-          // Remark by ViTy 20-5-2015 , check marker is photo?
+          // ViTy 20-5-2015 , check marker is photo?
           if (!waypoint.getPhotoUrl().isEmpty()) {
             waypointMarkerPhoto.draw(canvas);
           } else {
