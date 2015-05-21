@@ -19,7 +19,7 @@ limitations under the License.
     android:icon="@drawable/ic_menu_map_layer"
     android:id="@+id/menu_map_layer"
     android:orderInCategory="7"
-    android:showAsAction="ifRoom"
+    android:showAsAction="always"
     android:title="@string/menu_map_layer">
   </item>
 </menu>
